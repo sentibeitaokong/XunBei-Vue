@@ -9,15 +9,17 @@ export interface Runner {
 let activeEffect:any;
 let shouldTrack:any;
 //依赖类
-class ReactiveEffect {
+export class ReactiveEffect {
     private _fn:any;
     //依赖数组
     deps=[];
     //是否可用 响应式
     active=true
     onStop?:()=>void;
-    constructor(fn:any,public scheduler?: (callback: () => void) => void) {
+    public scheduler:Function|undefined;
+    constructor(fn:any,scheduler:any) {
         this._fn = fn;
+        this.scheduler=scheduler
     }
     run(){
         //1.会收集依赖 。利用shouldTrack来区别  stop以后不让收集依赖
@@ -26,7 +28,7 @@ class ReactiveEffect {
         }
         shouldTrack=true
         activeEffect=this
-        //执行fn方法时可能会收集依赖，收集完依赖再把shouldTrack置为false，防止依赖再次重复收集
+        //执行fn方法时会收集依赖，收集完依赖再把shouldTrack置为false，防止依赖再次重复收集
         const result=this._fn()
         //reset
         shouldTrack=false
