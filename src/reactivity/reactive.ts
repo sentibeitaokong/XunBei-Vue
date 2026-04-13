@@ -1,26 +1,32 @@
 import {mutableHandlers,readonlyHandlers,shallowReadonlyHandlers} from "./baseHandlers.ts";
+import {isObject} from "../shared";
+
 export const enum ReactiveFlags{
     IS_REACTIVE='__v_isReactive',
     IS_READONLY='__v_isReadonly',
 }
 
 export function reactive(raw: any) {
-    return createActiveObject(raw, mutableHandlers)
+    return createReactiveObject(raw, mutableHandlers)
 }
 
 //readonly方法不会收集依赖也不会触发set
 export function readonly(raw: any) {
-    return createActiveObject(raw, readonlyHandlers)
+    return createReactiveObject(raw, readonlyHandlers)
 }
 
 //shallowReadonly方法只有表层对象不会收集依赖也不会触发set
 export function shallowReadonly(raw: any) {
-    return createActiveObject(raw, shallowReadonlyHandlers)
+    return createReactiveObject(raw, shallowReadonlyHandlers)
 }
 
 //创建一个响应式的对象
-function createActiveObject(raw: any,baseHandlers:any) {
-    return new Proxy(raw, baseHandlers)
+function createReactiveObject(target: any,baseHandlers:any) {
+    if(!isObject(target)){
+        console.warn(`target :"${target}"必须是一个对象`);
+        return target
+    }
+    return new Proxy(target, baseHandlers)
 }
 
 //检查一个对象是否是由 reactive() 或 shallowReactive() 创建的代理。

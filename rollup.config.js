@@ -16,5 +16,17 @@ export default {
     ],
     plugins:[
         typescript()
-    ]
+    ],
+    // 👇 添加这个 onwarn 钩子来静音循环依赖警告
+    onwarn: (warning, warn) => {
+        // 如果是循环依赖警告，并且出自 src/reactivity 目录，我们就忽略它
+        if (
+            warning.code === 'CIRCULAR_DEPENDENCY' &&
+            warning.message.includes('src/reactivity')
+        ) {
+            return;
+        }
+        // 其他警告正常打印
+        warn(warning);
+    }
 }
