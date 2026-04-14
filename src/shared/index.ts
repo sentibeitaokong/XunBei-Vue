@@ -1,6 +1,8 @@
 //全局变量和函数
 export const extend=Object.assign
 
+export const EMPTY_OBJ={}
+
 export const isObject=(value:any)=>{
     return value!==null && typeof value==='object'
 }

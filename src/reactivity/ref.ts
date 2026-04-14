@@ -59,7 +59,7 @@ export function proxyRefs(objectWithRefs:any){
     return new Proxy(objectWithRefs,{
         get(target: any, propertyKey: string): any {
             // get -> 发现是一个ref值 那么就返回ref.value
-            //not ref -> 直接返回ref
+            //not ref -> 直接返回值
             return unRef(Reflect.get(target, propertyKey))
         },
         set(target: any, propertyKey: string,value:any): boolean {

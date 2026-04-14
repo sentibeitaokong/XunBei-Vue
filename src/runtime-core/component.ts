@@ -4,9 +4,9 @@ import {PublicInstanceProxyHandlers} from "./componentPublicInstance.ts";
 import {shallowReadonly} from "../reactivity/reactive.ts";
 import {emit} from "./componentEmits.ts";
 import {initSlots} from "./componentSlots.ts";
+import {proxyRefs} from "../reactivity";
 
 export  function createComponentInstance(vnode:any,parent:any){
-    console.log('parentComponent',parent)
     const component={
         vnode,
         type:vnode.type, //vnode类型
@@ -15,6 +15,8 @@ export  function createComponentInstance(vnode:any,parent:any){
         slots:{},
         provides:parent?parent.provides:{},    //provide数据
         parent,      //父组件 vnode
+        isMounted:false,
+        subTree:{},    ///记录上一个vnode节点
         emit:()=>{}
     };
     //初始化赋值
@@ -60,7 +62,7 @@ function handleSetupResult(instance:any,setupResult:any){
     //TODO function
     if(typeof setupResult==='object'){
         //将setup返回的Object对象直接赋值给组件实例的属性对象中
-        instance.setupState=setupResult;
+        instance.setupState=proxyRefs(setupResult);
     }
     finishComponentSetup(instance)
 }
