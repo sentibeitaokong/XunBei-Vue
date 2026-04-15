@@ -62,6 +62,7 @@ export function effect(fn:any,options:any={}){
     _effect.run()
     const runner:any=_effect.run.bind(_effect)
     runner.effect=_effect
+    //手动执行更新的函数
     return runner
 }
 

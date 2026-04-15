@@ -6,10 +6,12 @@ import {emit} from "./componentEmits.ts";
 import {initSlots} from "./componentSlots.ts";
 import {proxyRefs} from "../reactivity";
 
+//创建组件实例 组件实例里面包含当前的虚拟节点vnode已经其他一些属性
 export  function createComponentInstance(vnode:any,parent:any){
     const component={
         vnode,
         type:vnode.type, //vnode类型
+        next:null,      //下一个更新的vnode
         setupState:{},  //setup方法里面返回的属性
         props:{},
         slots:{},

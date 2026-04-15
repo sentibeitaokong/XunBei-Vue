@@ -10,6 +10,7 @@ export function createVNode(type:any, props?:any, children?:any) {
         children,
         key:props &&props.key,
         ShapeFlag:getShapeFlag(type),
+        component:null,
         el:null
     };
     //位运算 a｜b  同时满足ab两种条件
