@@ -3,5 +3,5 @@ export {renderSlots} from "./helpers/renderSlots.ts"
 export {createTextVNode} from "./vnode.ts";
 export {getCurrentInstance} from "./component.ts";
 export {provide,inject} from './apiInject.ts'
-export {createRenderer} from './render.ts'
+export {createRenderer} from './renderer.ts'
 export {nextTick} from './scheduler.ts'
