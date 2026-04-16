@@ -24,7 +24,7 @@ function flushJobs(){
         job&&job()
     }
 }
-
+//支持传入方法以及使用await的方式   nextTick(()=>{})  await nextTick()
 export function nextTick(fn:any){
     return fn?p.then(fn):p
 }

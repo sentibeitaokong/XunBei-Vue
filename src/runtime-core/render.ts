@@ -58,11 +58,13 @@ export function createRenderer(options:any) {
 
     //处理Fragment  只渲染children 渲染插槽和template里面的数据
     function processFragment(n1:any,n2: any, container: any, parentComponent: any,anchor:any) {
+        console.log('oldFragment',n1)
         mountChildren(n2.children, container, parentComponent,anchor)
     }
 
     //处理无标签的节点
     function processText(n1:any,n2: any, container: any) {
+        console.log('oldText',n1)
         const {children} = n2
         //存储该组件实例管理的 DOM 根节点。
         const textNode = (n2.el = document.createTextNode(children))
@@ -105,6 +107,7 @@ export function createRenderer(options:any) {
     }
 
     function patchElement(n1:any,n2:any,container:any,parentComponent:any,anchor:any){
+        console.log('patchElement container',container)
         //新旧节点对比
         //获取el n2在初始化的时候可能没有值,直接将n1.el赋值给n2.el
         const el=(n2.el=n1.el)

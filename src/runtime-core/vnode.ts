@@ -15,8 +15,10 @@ export function createVNode(type:any, props?:any, children?:any) {
     };
     //位运算 a｜b  同时满足ab两种条件
     if(typeof children==='string'){
+        //children是string类型就是element节点
         vnode.ShapeFlag|=ShapeFlags.TEXT_CHILDREN
     }else if(Array.isArray(children)){
+        //children是数组就是组件
         vnode.ShapeFlag|=ShapeFlags.ARRAY_CHILDREN
     }
 

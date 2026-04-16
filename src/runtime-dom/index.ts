@@ -6,6 +6,7 @@ function createElement(type:any){
 }
 //prevVal为旧的props,nextVal为新的props
 function patchProp(el:any,key:any,prevVal:any,nextVal:any){
+    console.log('旧的props',prevVal)
     //on+Event name 就是点击事件 小写event就是事件名 。
     const isOn = (key: string) => /^on[A-Z]/.test(key);
     if (isOn(key)) {
