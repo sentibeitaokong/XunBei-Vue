@@ -1,7 +1,10 @@
 export {h} from './h'
 export {renderSlots} from "./helpers/renderSlots.ts"
-export {createTextVNode} from "./vnode.ts";
-export {getCurrentInstance} from "./component.ts";
+export {createTextVNode,createElementVNode} from "./vnode.ts";
+export {getCurrentInstance,registerRuntimeCompiler} from "./component.ts";
 export {provide,inject} from './apiInject.ts'
 export {createRenderer} from './renderer.ts'
 export {nextTick} from './scheduler.ts'
+export {toDisplayString} from '../shared'
+//依赖reactivity
+export * from '../reactivity'

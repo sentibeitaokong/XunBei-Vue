@@ -72,9 +72,13 @@ function handleSetupResult(instance:any,setupResult:any){
 function finishComponentSetup(instance:any){
     //获取组件的vnode
     const Component=instance.type
-    if(Component.render){
-        instance.render=Component.render
+    if(compiler&&!Component.render){
+        if(Component.template){
+            //这里的compiler方法就是render方法，在XunBei-vue出口调用时，通过调用这个文件的方法，把render函数赋值给了compiler方法
+            Component.render=compiler(Component.template)
+        }
     }
+    instance.render=Component.render
 }
 
 let currentInstance:any=null
@@ -85,4 +89,11 @@ export function getCurrentInstance(){
 //可追溯赋值过程,方便维护
 export function setCurrentInstance(instance:any){
     currentInstance=instance
+}
+
+//在XunBei-vue出口调用  将render函数赋值给compiler
+let compiler:any;
+
+export function registerRuntimeCompiler(_compiler:any){
+    compiler=_compiler
 }

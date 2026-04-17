@@ -392,7 +392,7 @@ export function createRenderer(options:any) {
                 //修改指向  将setup方法返回值的值存进虚拟dom实例instance的setupState属性中，然后将setupState中的数据指向instace.proxy中
                 //因此可以直接使用this获取instace中setupState属性中的数据
                 //instance.subTree存一下上一个vnode
-                const subTree = (instance.subTree=instance.render.call(proxy))
+                const subTree = (instance.subTree=instance.render.call(proxy,proxy))
                 //vnode->patch
                 //vnode->element->mountElement
                 patch(null,subTree, container, instance,anchor)
@@ -412,7 +412,7 @@ export function createRenderer(options:any) {
                 }
                 const {proxy} = instance
                 //新的vnode
-                const subTree = instance.render.call(proxy)
+                const subTree = instance.render.call(proxy,proxy)
                 //上一个vnode
                 const previousSubTree=instance.subTree
                 instance.subTree=subTree

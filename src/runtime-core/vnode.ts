@@ -3,6 +3,10 @@ import {ShapeFlags} from "../shared/ShapeFlags.ts";
 export const Fragement=Symbol('Fragement')
 export const Text=Symbol('Text')
 
+export {
+    createVNode as createElementVNode
+}
+
 export function createVNode(type:any, props?:any, children?:any) {
     const vnode={
         type,

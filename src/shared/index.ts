@@ -3,9 +3,13 @@ export const extend=Object.assign
 
 export const EMPTY_OBJ={}
 
+export * from './toDisplayString.ts'
+
 export const isObject=(value:any)=>{
     return value!==null && typeof value==='object'
 }
+
+export const isString=(value:string)=>typeof value==='string'
 
 export const hasChanged=(val:any,newVal:any):boolean=>{
     return !Object.is(val,newVal)

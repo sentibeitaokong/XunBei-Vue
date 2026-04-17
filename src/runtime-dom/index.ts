@@ -1,5 +1,6 @@
 import {createRenderer} from "../runtime-core";
-
+//依赖runtime-core
+export * from '../runtime-core/index'
 function createElement(type:any){
     return document.createElement(type)
 
@@ -53,4 +54,3 @@ export function createApp(...args:any[]){
     return renderer.createApp(...args)
 }
 
-export * from '../runtime-core/index'
