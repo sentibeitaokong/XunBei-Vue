@@ -1,4 +1,4 @@
-import { createApp } from "../../../../lib/XunBei-Vue.esm.js";
+import { createApp } from "../../dist/XunBei-Vue.esm.js";
 import { App } from "./App.js";
 
 const rootContainer = document.querySelector("#app");

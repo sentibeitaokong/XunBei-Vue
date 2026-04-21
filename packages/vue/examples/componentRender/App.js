@@ -1,5 +1,5 @@
-import {h} from '../../../../lib/XunBei-Vue.esm.js'
-import {createTextVNode} from '../../../../lib/XunBei-Vue.esm.js'
+import {h} from '../../dist/XunBei-Vue.esm.js'
+import {createTextVNode} from '../../dist/XunBei-Vue.esm.js'
 import {Foo} from './Foo.js'
 export const App={
     name:'App',

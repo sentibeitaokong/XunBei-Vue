@@ -1,4 +1,4 @@
-import { h,ref } from "../../../../lib/XunBei-Vue.esm.js";
+import { h,ref } from "../../dist/XunBei-Vue.esm.js";
 export const App = {
   name: "App",
 

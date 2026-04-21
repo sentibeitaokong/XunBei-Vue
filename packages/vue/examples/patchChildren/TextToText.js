@@ -1,6 +1,6 @@
 // 新的是 text
 // 老的是 text
-import { ref, h } from "../../../../lib/XunBei-Vue.esm.js";
+import { ref, h } from "../../dist/XunBei-Vue.esm.js";
 
 const prevChildren = "oldChild";
 const nextChildren = "newChild";

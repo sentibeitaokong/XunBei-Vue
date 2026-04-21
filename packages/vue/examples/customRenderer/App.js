@@ -1,4 +1,4 @@
-import {h} from '../../../../lib/XunBei-Vue.esm.js'
+import {h} from '../../dist/XunBei-Vue.esm.js'
 
 export const App = {
   setup() {

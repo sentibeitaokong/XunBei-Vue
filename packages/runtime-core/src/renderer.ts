@@ -401,6 +401,7 @@ export function createRenderer(options:any) {
                 initialVnode.el = subTree.el
                 instance.isMounted=true
             }else{
+                debugger
                 console.log('update')
                 //更新组件props 取出当前以及需要更新后的组件实例
                 const {next,vnode}=instance

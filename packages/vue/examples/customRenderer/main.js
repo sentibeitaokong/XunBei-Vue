@@ -1,4 +1,4 @@
-import { createRenderer } from "../../../../lib/XunBei-Vue.esm.js";
+import { createRenderer } from "../../dist/XunBei-Vue.esm.js";
 import { App } from "./App.js";
 
 const app = new PIXI.Application();

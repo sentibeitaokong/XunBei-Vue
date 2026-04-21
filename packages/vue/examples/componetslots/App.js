@@ -1,4 +1,4 @@
-import {h} from '../../../../lib/XunBei-Vue.esm.js'
+import {h} from '../../dist/XunBei-Vue.esm.js'
 import {Foo} from './Foo.js'
 window.self=null
 export const App={

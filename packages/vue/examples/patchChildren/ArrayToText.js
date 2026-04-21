@@ -1,7 +1,7 @@
 // 老的是 array
 // 新的是 text
 
-import { ref, h } from "../../../../lib/XunBei-Vue.esm.js";
+import { ref, h } from "../../dist/XunBei-Vue.esm.js";
 const nextChildren = "newChildren";
 const prevChildren = [h("div", {}, "A"), h("div", {}, "B")];
 

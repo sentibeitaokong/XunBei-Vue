@@ -1,5 +1,5 @@
 // 组件 provide 和 inject 功能
-import {h,provide,inject} from "../../../../lib/XunBei-Vue.esm.js";
+import {h,provide,inject} from "../../dist/XunBei-Vue.esm.js";
 
 const Provider = {
   name: "Provider",

@@ -3,7 +3,7 @@ import {
   ref,
   getCurrentInstance,
   nextTick,
-} from "../../../../lib/XunBei-Vue.esm.js";
+} from "../../dist/XunBei-Vue.esm.js";
 
 export default {
   name: "App",

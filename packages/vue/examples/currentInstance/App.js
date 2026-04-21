@@ -1,6 +1,6 @@
-import {h} from '../../../../lib/XunBei-Vue.esm.js'
+import {h} from '../../dist/XunBei-Vue.esm.js'
 import {Foo} from './Foo.js'
-import {getCurrentInstance} from '../../../../lib/XunBei-Vue.esm.js'
+import {getCurrentInstance} from '../../dist/XunBei-Vue.esm.js'
 export const App={
     name:'App',
     render(){
