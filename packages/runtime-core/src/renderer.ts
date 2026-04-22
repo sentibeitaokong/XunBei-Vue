@@ -3,7 +3,7 @@ import { ShapeFlags } from '../../shared/src/ShapeFlags.ts'
 import { Fragement, Text } from './vnode.ts'
 import { createAppAPI } from './createApp.ts'
 import { effect } from '../../reactivity/src/effect.ts'
-import { EMPTY_OBJ } from '../../shared/src'
+import { EMPTY_OBJ } from '@vue/shared'
 import { shouldUpdateComponent } from './componentUpdateUtils.ts'
 import { queueJobs } from './scheduler.ts'
 
