@@ -1,5 +1,5 @@
 // 1. 定义 Runner 接口
-import { extend } from '@vue/shared'
+import { extend } from '@xunbei-vue/shared'
 
 export interface Runner {
   (): any // 表示 runner 本身是一个可以调用的函数

@@ -1,4 +1,4 @@
-import { toHandleKey, camelize } from '@vue/shared'
+import { toHandleKey, camelize } from '@xunbei-vue/shared'
 
 export function emit(instance: any, event: any, ...args: any[]) {
   //instance.props  -> emit event

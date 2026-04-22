@@ -11,5 +11,9 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@xunbei-vue/compiler-core": "workspace:*",
+    "@xunbei-vue/runtime-dom": "workspace:*"
+  }
 }

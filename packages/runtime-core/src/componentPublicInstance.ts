@@ -1,4 +1,4 @@
-import { hasOwn } from '@vue/shared'
+import { hasOwn } from '@xunbei-vue/shared'
 //便于处理其他属性
 const PublicPropertiesMap: any = {
   $el: (i: any) => i.vnode.el,

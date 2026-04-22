@@ -3,7 +3,7 @@ import {
   readonlyHandlers,
   shallowReadonlyHandlers,
 } from './baseHandlers.ts'
-import { isObject } from '@vue/shared'
+import { isObject } from '@xunbei-vue/shared'
 
 export const enum ReactiveFlags {
   IS_REACTIVE = '__v_isReactive',

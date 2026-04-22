@@ -1,5 +1,5 @@
 //创建虚拟节点
-import { ShapeFlags } from '../../shared/src/ShapeFlags.ts'
+import { ShapeFlags } from '@xunbei-vue/shared'
 export const Fragement = Symbol('Fragement')
 export const Text = Symbol('Text')
 

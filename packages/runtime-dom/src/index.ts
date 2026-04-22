@@ -1,6 +1,6 @@
-import { createRenderer } from '@vue/runtime-core'
+import { createRenderer } from '@xunbei-vue/runtime-core'
 //依赖runtime-core
-export * from '@vue/runtime-core'
+export * from '@xunbei-vue/runtime-core'
 function createElement(type: any) {
   return document.createElement(type)
 }

@@ -8,5 +8,9 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@xunbei-vue/reactivity": "workspace:*",
+    "@xunbei-vue/shared": "workspace:*"
+  }
 }

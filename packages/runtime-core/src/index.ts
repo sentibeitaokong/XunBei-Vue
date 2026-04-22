@@ -5,6 +5,6 @@ export { getCurrentInstance, registerRuntimeCompiler } from './component.ts'
 export { provide, inject } from './apiInject.ts'
 export { createRenderer } from './renderer.ts'
 export { nextTick } from './scheduler.ts'
-export { toDisplayString } from '@vue/shared'
+export { toDisplayString } from '@xunbei-vue/shared'
 //依赖reactivity
 export * from '../../reactivity/src'

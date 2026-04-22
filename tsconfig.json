@@ -14,15 +14,15 @@
     "verbatimModuleSyntax": true,
     "moduleDetection": "force",
     "noEmit": true,
-
+    "rewriteRelativeImportExtensions": true,
     /* Linting */
-    "noUnusedLocals": true,
+    "noUnusedLocals": false,
     "noUnusedParameters": true,
     "erasableSyntaxOnly": false,
     "noFallthroughCasesInSwitch": true,
     //路径映射
     "paths": {
-      "@vue/*": ["packages/*/src"]
+      "@xunbei-vue/*": ["packages/*/src"]
     },
     "ignoreDeprecations": "6.0"
   },

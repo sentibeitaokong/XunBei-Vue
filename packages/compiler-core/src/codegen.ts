@@ -2,7 +2,7 @@
 import { NodeTypes } from './ast.ts'
 import { CREATE_ELEMENT_VNODE, helperMapName } from './runtimeHelpers.ts'
 import { TO_DISPLAY_STRING } from './runtimeHelpers.ts'
-import { isString } from '@vue/shared'
+import { isString } from '@xunbei-vue/shared'
 
 export function generate(ast: any) {
   const context = createCodegenContext()

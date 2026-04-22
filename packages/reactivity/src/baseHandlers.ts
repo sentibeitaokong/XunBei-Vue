@@ -1,6 +1,6 @@
 import { track, trigger } from './effect.ts'
 import { reactive, ReactiveFlags, readonly } from './reactive.ts'
-import { extend, isObject } from '@vue/shared'
+import { extend, isObject } from '@xunbei-vue/shared'
 
 const get = createGetter()
 const set = createSetter()

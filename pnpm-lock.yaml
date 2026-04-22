@@ -36,17 +36,49 @@ importers:
         specifier: ^2.1.0
         version: 2.1.9(@types/node@25.5.2)(jsdom@24.1.3)(lightningcss@1.32.0)
 
-  packages/complier-core: {}
+  packages/compiler-core:
+    dependencies:
+      '@xunbei-vue/shared':
+        specifier: workspace:*
+        version: link:../shared
 
-  packages/reactivity: {}
+  packages/complier-core:
+    dependencies:
+      '@xunbei-vue/shared':
+        specifier: workspace:*
+        version: link:../shared
 
-  packages/runtime-core: {}
+  packages/reactivity:
+    dependencies:
+      '@xunbei-vue/shared':
+        specifier: workspace:*
+        version: link:../shared
 
-  packages/runtime-dom: {}
+  packages/runtime-core:
+    dependencies:
+      '@xunbei-vue/reactivity':
+        specifier: workspace:*
+        version: link:../reactivity
+      '@xunbei-vue/shared':
+        specifier: workspace:*
+        version: link:../shared
+
+  packages/runtime-dom:
+    dependencies:
+      '@xunbei-vue/runtime-core':
+        specifier: workspace:*
+        version: link:../runtime-core
 
   packages/shared: {}
 
-  packages/vue: {}
+  packages/vue:
+    dependencies:
+      '@xunbei-vue/compiler-core':
+        specifier: workspace:*
+        version: link:../compiler-core
+      '@xunbei-vue/runtime-dom':
+        specifier: workspace:*
+        version: link:../runtime-dom
 
 packages:
 

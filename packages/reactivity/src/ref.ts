@@ -1,5 +1,5 @@
 import { trackEffects, triggerEffects, isTracking } from './effect.ts'
-import { hasChanged, isObject } from '@vue/shared'
+import { hasChanged, isObject } from '@xunbei-vue/shared'
 import { reactive } from './reactive.ts'
 
 class RefImpl {

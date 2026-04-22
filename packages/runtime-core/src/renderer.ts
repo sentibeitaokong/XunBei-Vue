@@ -1,9 +1,9 @@
 import { createComponentInstance, setupComponent } from './component.ts'
-import { ShapeFlags } from '../../shared/src/ShapeFlags.ts'
+import { ShapeFlags } from '@xunbei-vue/shared'
 import { Fragement, Text } from './vnode.ts'
 import { createAppAPI } from './createApp.ts'
-import { effect } from '../../reactivity/src/effect.ts'
-import { EMPTY_OBJ } from '@vue/shared'
+import { effect } from '@xunbei-vue/reactivity'
+import { EMPTY_OBJ } from '@xunbei-vue/shared'
 import { shouldUpdateComponent } from './componentUpdateUtils.ts'
 import { queueJobs } from './scheduler.ts'
 

@@ -1,10 +1,10 @@
 //XunBei-Vue 出口
 //依赖runtime-dom
-export * from '@vue/runtime-dom'
+export * from '@xunbei-vue/runtime-dom'
 
-import { baseCompile } from '../../complier-core/src'
-import * as runtimeDom from '../../runtime-dom/src'
-import { registerRuntimeCompiler } from '../../runtime-dom/src'
+import { baseCompile } from '@xunbei-vue/compiler-core'
+import * as runtimeDom from '@xunbei-vue/runtime-dom'
+import { registerRuntimeCompiler } from '@xunbei-vue/runtime-dom'
 
 function compileToFunction(template: any) {
   //将模板转换成 有render函数的字符串 例:

@@ -1,4 +1,4 @@
-import { ShapeFlags } from '../../shared/src/ShapeFlags.ts'
+import { ShapeFlags } from '@xunbei-vue/shared'
 
 export function initSlots(instance: any, children: any) {
   //slots 是插槽就处理
