@@ -56,13 +56,17 @@ function cleanupEffect(effect: any) {
 }
 
 //存储依赖
-export function effect(fn: any, options: any = {}) {
+export function effect(fn: any, options?: any) {
   //fn
-  const scheduler = options.scheduler
+  const scheduler = options && options.scheduler
   const _effect = new ReactiveEffect(fn, scheduler)
   //合并options选项
   extend(_effect, options)
-  _effect.run()
+  //懒执行
+  if (!options || !options.lazy) {
+    // 执行 run 函数
+    _effect.run()
+  }
   const runner: any = _effect.run.bind(_effect)
   runner.effect = _effect
   //手动执行更新的函数
