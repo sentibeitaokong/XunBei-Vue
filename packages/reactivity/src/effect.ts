@@ -6,6 +6,13 @@ export interface Runner {
   effect: ReactiveEffect // 表示 runner 上挂载了 effect 实例
 }
 
+export type EffectScheduler = (...args: any[]) => any
+
+export interface ReactiveEffectOptions {
+  lazy?: boolean
+  scheduler?: EffectScheduler
+}
+
 let activeEffect: any
 let shouldTrack: any
 //依赖类
@@ -56,7 +63,7 @@ function cleanupEffect(effect: any) {
 }
 
 //存储依赖
-export function effect(fn: any, options?: any) {
+export function effect(fn: any, options?: ReactiveEffectOptions) {
   //fn
   const scheduler = options && options.scheduler
   const _effect = new ReactiveEffect(fn, scheduler)

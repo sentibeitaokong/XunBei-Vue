@@ -17,6 +17,20 @@ describe('Effect', () => {
     user.age++
     expect(nextAge).toBe(12)
   })
+  it('lazy run ', () => {
+    const user = reactive({
+      age: 10,
+    })
+    let nextAge = 5
+    // lazy:true  懒执行不会执行effect里面的函数
+    effect(
+      () => {
+        nextAge = user.age + 1
+      },
+      { lazy: true },
+    )
+    expect(nextAge).toBe(5)
+  })
   it('should return runner when call effect', () => {
     //1.effec(fn)->function(runner)->fn->return
     let foo = 10
