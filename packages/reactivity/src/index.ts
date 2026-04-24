@@ -9,3 +9,4 @@ export {
 } from './reactive.ts'
 
 export { effect, ReactiveEffect } from './effect.ts'
+export { computed } from './computed.ts'

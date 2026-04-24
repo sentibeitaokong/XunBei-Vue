@@ -11,6 +11,8 @@ let shouldTrack: any
 //依赖类
 export class ReactiveEffect {
   private _fn: any
+  //是否是computed
+  computed: any
   //依赖数组
   deps = []
   //是否可用 响应式
