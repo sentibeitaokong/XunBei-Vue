@@ -11,6 +11,7 @@ export type EffectScheduler = (...args: any[]) => any
 export interface ReactiveEffectOptions {
   lazy?: boolean
   scheduler?: EffectScheduler
+  onStop?: () => any
 }
 
 let activeEffect: any
@@ -114,8 +115,19 @@ export function isTracking() {
 }
 //触发依赖
 export function trigger(target: any, propertyKey: string) {
-  let depsMap = targetMap.get(target)
+  // 依据 target 获取存储的 map 实例
+  const depsMap = targetMap.get(target)
+  // 如果 map 不存在，则直接 return
+  if (!depsMap) {
+    return
+  }
+  // 依据指定的 key，获取 dep 实例
   let dep = depsMap.get(propertyKey)
+  // dep 不存在则直接 return
+  if (!dep) {
+    return
+  }
+  // 触发 dep
   triggerEffects(dep)
 }
 

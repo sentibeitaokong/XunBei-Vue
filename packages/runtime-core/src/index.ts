@@ -6,5 +6,6 @@ export { provide, inject } from './apiInject.ts'
 export { createRenderer } from './renderer.ts'
 export { nextTick } from './scheduler.ts'
 export { toDisplayString } from '@xunbei-vue/shared'
+export { watch } from './apiWatch.ts'
 //依赖reactivity
 export * from '../../reactivity/src'
