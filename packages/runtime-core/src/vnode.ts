@@ -4,9 +4,24 @@ export const Fragement = Symbol('Fragement')
 export const Text = Symbol('Text')
 
 export { createVNode as createElementVNode }
+export interface VNode {
+  __v_isVNode: boolean
+  key: any
+  type: any
+  props: any
+  children: any
+  ShapeFlag: number
+  component: null
+  el: null
+}
 
-export function createVNode(type: any, props?: any, children?: any) {
+export function isVNode(value: any): value is VNode {
+  return value ? value.__v_isVNode === true : false
+}
+
+export function createVNode(type: any, props?: any, children?: any): VNode {
   const vnode = {
+    __v_isVNode: true,
     type,
     props,
     children,
