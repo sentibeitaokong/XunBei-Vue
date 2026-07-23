@@ -99,7 +99,7 @@ export function createRenderer(options: any) {
     }
   }
   function updateComponent(n1: any, n2: any) {
-    debugger
+    console.log('2')
     if (shouldUpdateComponent(n1, n2)) {
       //获取组件实例
       const instance = (n2.component = n1.component)
@@ -468,6 +468,7 @@ export function createRenderer(options: any) {
           initialVnode.el = subTree.el
           instance.isMounted = true
         } else {
+          console.log('1')
           console.log('update')
           //更新组件props 取出当前以及需要更新后的组件实例
           const { next, vnode } = instance
